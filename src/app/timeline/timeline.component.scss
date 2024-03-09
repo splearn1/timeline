@@ -1,0 +1,56 @@
+h1 {
+	color: #333;
+	text-align: center;
+	font-family: Arial, sans-serif;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0 auto;
+	max-width: 600px;
+}
+
+li {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px;
+	border-bottom: 1px solid #ccc;
+}
+
+span {
+	margin-left: 10px;
+}
+
+input[type='checkbox'] {
+	margin: 0 10px;
+}
+
+button {
+	padding: 5px 10px;
+	margin-left: 10px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+button:first-of-type {
+	background-color: #4caf50;
+	color: white;
+}
+
+button:not(:first-of-type) {
+	background-color: #f44336;
+	color: white;
+}
+
+button:hover {
+	opacity: 0.8;
+}
+
+.todo-form {
+	display: flex;
+	justify-content: center;
+	margin: 20px 0 20px 0;
+}

@@ -1,14 +1,21 @@
-<h1>Timeline</h1>
 
-<div class="timeline-form">
+<div class="page">
+  <i><b>Today!</b></i>
+
+
+
+</div>
+
+
+<!-- <div class="timeline-form">
   <input type="text" [(ngModel)]="newTimelineBody" placeholder="Add new timeline...">
   <button (click)="addTimeline()">Add Timeline</button>
 </div>
 
 <ul>
   <li *ngFor="let timeline of timelines">
-    <input type="checkbox" [(ngModel)]="timeline.is_completed" (change)="updateTimeline(timeline)"/>
-    <span>{{ timeline.body }}</span>
-    <button (click)="deleteTimeline(timeline.id)">Delete</button>
+    <input type="checkbox" [(ngModel)]="timeline" (change)="updateTimeline(timeline)"/>
+    <span>{{ timeline }}</span>
+   <button (click)="deleteTimeline(timeline.id)">Delete</button>
   </li>
-</ul>
+</ul> -->

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Timeline } from '../models/timeline';
 import { TimelineService } from '../services/timeline.service';
+import { User } from '../models/users';
 
 @Component({
   selector: 'app-timeline',
@@ -14,17 +15,23 @@ import { TimelineService } from '../services/timeline.service';
 export class TimelineComponent implements OnInit {
   timelines: Timeline[] = [];
   newTimelineBody: string = '';
+  users: User[] = [];
 
   constructor(private timelineService: TimelineService) { }
 
   ngOnInit(): void {
-      this.timelineService.getTimelines().subscribe(timelines => this.timelines = timelines)
+      this.timelineService.getTimelines().subscribe({
+        next: (users) => {
+          this.users = users;
+          console.log(this.users)
+        },
+        error: err => console.log(err)
+      })
   }
 
   addTimeline() {
     if (!this.newTimelineBody.trim()){
-    // this.timelineService.createTimeline({ body: this.newTimelineBody, is_completed: false }).subscribe(timeline => this.timelines.push(timeline));
-    // this.newTimelineBody = '';
+      // referene timeline model for what I want to display
     return;
     }
 

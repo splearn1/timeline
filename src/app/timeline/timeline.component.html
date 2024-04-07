@@ -1,21 +1,44 @@
 
 <div class="page">
-  <i><b>Today!</b></i>
+  <i><b>To do today!</b></i>
+  <div class="card-container" d-flex>
+    <div class="card-title">
+      <div class="card-body">
+        <span>Welcome {{currentUser?.username}}</span>
+        <table>
+          <thead>
+            <tr>
+              <th>Pet Name</th>
+              <th>Medication</th>
+              <th>Dosage</th>
+              <th>Frequency</th>
+              <!-- <button (click)="addPet()">Add</button> -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <!-- <td>{{pet.name}}</td>
+              <td>{{pet.medication}}</td>
+              <td>{{pet.dosage}}</td>
+              <td>{{pet.frequency}}</td>
+
+              <td style="cursor: pointer;">
+                <button (click)="editPet()">Edit</button>
+                <button (click)="deletePet()">Delete</button>
+              </td> -->
+            </tr>
+          </tbody>
+        </table>
+        <div>
+          <p>Remember to give Buddy 500mg of Amoxicillin 2X today. </p>
+          <!-- <p>Remember to give {{pet.name}} {{pet.dosage}} of {{pet.medication}} {{pet.frequency}} today.</p> -->
+        </div>
+      </div>
+    </div>
+
+  </div>
 
 
 
 </div>
 
-
-<!-- <div class="timeline-form">
-  <input type="text" [(ngModel)]="newTimelineBody" placeholder="Add new timeline...">
-  <button (click)="addTimeline()">Add Timeline</button>
-</div>
-
-<ul>
-  <li *ngFor="let timeline of timelines">
-    <input type="checkbox" [(ngModel)]="timeline" (change)="updateTimeline(timeline)"/>
-    <span>{{ timeline }}</span>
-   <button (click)="deleteTimeline(timeline.id)">Delete</button>
-  </li>
-</ul> -->

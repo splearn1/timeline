@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, switchMap } from 'rxjs';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,17 +11,22 @@ import { BehaviorSubject } from 'rxjs';
 export class AuthenticationService {
   private readonly tokenSubject = new BehaviorSubject<string | null>(null);
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router, private userService: UserService) { }
 
   login(username: string, password: string) {
     return this.http.post<{ token: string }>('http://localhost:3000/login', {
       username,
       password,
-    });
+    }).pipe(switchMap((res:any) => {
+      this.setToken(res.token)
+      return this.userService.getBootstrapData()
+    }
+    ))
   }
 
   signUp(user:any) {
     // return this.http.post<{ token: string }>('http://localhost:3000/signup', user);
+    // return this.http.post(`${environment.apiUrl}/users`, data)
     return this.http.post('http://localhost:3000/users', user);
   }
 

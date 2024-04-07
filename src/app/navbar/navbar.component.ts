@@ -16,6 +16,8 @@ export class NavbarComponent {
 
   logout() {
     this.authService.logout();
+    // is it necessary to include this if I'm already handling this in the authService ?????
+    // this.userService.setCurrentUser(null);
   }
 
 }

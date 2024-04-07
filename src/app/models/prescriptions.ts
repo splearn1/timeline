@@ -1,14 +1,12 @@
-import { DateTime } from "@angular/common";
-
 export class Prescription {
+  id: number;
+  frequency: number;
+  duration?: number;
 
-  constructor (
-    public frequency: string,
-    public duration: string,
-    public date_prescribed: DateTime,
-    public pet_id?: string,
-    public vet_id?: string,
-    public med_id?: string,
-  ) {}
-  
+  constructor (prescription: any) {
+    this.id = prescription.id;
+    this.frequency = prescription.frequency;
+    this.duration = prescription.duration;
+  }
+
 }

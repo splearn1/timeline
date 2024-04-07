@@ -1,4 +1,4 @@
-# Timeline
+# Timeline is set up to be the HOMEPAGE for this application
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.1.
 

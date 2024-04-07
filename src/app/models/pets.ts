@@ -1,10 +1,14 @@
 export class Pet {
+  id: number;
+  name: string;
+  species: string;
+  breed?: string;
 
-  constructor (
-    public name: string,
-    public species: string,
-    public breed?: string,
-    public user_id?: string
-  ) {}
-  
+  constructor (pets: any) {
+    this.id = pets.id;
+    this.name = pets.name;
+    this.species = pets.species;
+    this.breed = pets.breed;
+  }
+
 }

@@ -19,19 +19,19 @@ export class TimelineService {
     return this.http.get<User[]>(this.url);
   }
 
-  getTimelineById(id: number): Observable<Timeline> {
-    return this.http.get<Timeline>(`${this.url}/${id}`);
-  }
+  // getTimelineById(id: number): Observable<Timeline> {
+  //   return this.http.get<Timeline>(`${this.url}/${id}`);
+  // }
 
-  createTimeline(timeline: { body: string; is_completed: boolean }): Observable<Timeline> {
-    return this.http.post<Timeline>(this.url, timeline);
-  }
+  // createTimeline(timeline: Timeline): Observable<Timeline> {
+  //   return this.http.post<Timeline>(this.url, timeline);
+  // }
 
-  updateTimeline(timeline: Timeline): Observable<Timeline> {
-    return this.http.put<Timeline>(`${this.url}/${timeline}`, timeline);
-  }
+  // updateTimeline(timeline: Timeline): Observable<Timeline> {
+  //   return this.http.put<Timeline>(`${this.url}/${timeline}`, timeline);
+  // }
 
-  deleteTimeline(id: number): Observable<Timeline> {
-    return this.http.delete<Timeline>(`${this.url}/${id}`);
-  }
+  // deleteTimeline(id: number): Observable<Timeline> {
+  //   return this.http.delete<Timeline>(`${this.url}/${id}`);
+  // }
 }

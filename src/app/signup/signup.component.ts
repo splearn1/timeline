@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 
 export const passwordsMatchValidator: ValidatorFn = (control: AbstractControl): {[key: string]: any} | null => {
   const password = control.get('password')?.value;
-  const confirmPassword = control.get('confirmPassword')?.value;
+  const confirmPassword = control.get('confirm_password')?.value;
   return password === confirmPassword ? null : { 'passwordsNotMatching': true };
 };
 
@@ -14,12 +14,10 @@ export const passwordsMatchValidator: ValidatorFn = (control: AbstractControl): 
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './signup.component.html',
-  styleUrl: './signup.component.scss'
+  styleUrls: ['./signup.component.scss']
 })
 
 export class SignupComponent {
-
-
 
   constructor(private authService: AuthenticationService, private router:Router, private fb: FormBuilder) { }
 
@@ -34,7 +32,7 @@ export class SignupComponent {
 
   onSubmit() {
     console.log('form submitted');
-    const formValue = this.signUpForm;
+    const formValue = this.signUpForm.value;
     console.log(formValue);
     this.authService.signUp(formValue).subscribe({
       next: (res:any) => {

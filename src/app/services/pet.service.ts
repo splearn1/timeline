@@ -10,11 +10,25 @@ import { environment } from '../../environments/environment.development';
 })
 export class PetService {
 
-  constructor(private http:HttpClient, private router:Router) {
-
-  }
+  constructor(private http:HttpClient, private router:Router) { }
 
   getPets(): Observable<Pet[]> {
     return this.http.get<Pet[]>(`${environment.apiUrl}/pets`);
+  }
+
+  addPet(pet:Pet) {
+    return this.http.post<Pet>(`${environment.apiUrl}/pets`, pet);
+  }
+
+  getPetById(id: number): Observable<Pet> {
+    return this.http.get<Pet>(`${environment.apiUrl}/pets/${id}`);
+  }
+
+  updatePet(pet:Pet): Observable<Pet> {
+    return this.http.put<Pet>(`${environment.apiUrl}/pets/${pet.id}`, pet);
+  }
+
+  deletePet(id: number): Observable<Pet> {
+    return this.http.delete<Pet>(`${environment.apiUrl}/pets/${id}`);
   }
 }

@@ -66,6 +66,14 @@
 }
 
 .card-body {
-  height: 600px;
-  width: 600px;
+  // height: auto;
+  // width: 33%;
+  background-color: lightsalmon;
+  // margin-left: 33%;
+  // margin-top: 20%;
+  position:absolute;
+  left: 33%;
+  top: 30%;
+  right: 33%;
+  bottom: 20%;
 }

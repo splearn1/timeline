@@ -25,3 +25,23 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## Javascript path and string navigation
+
+```javascript
+      let prodWebsiteProtocolAndHostAndPort = "https://my.production.website:12345";
+      let devWebsiteProtocolAndHostAndPort = "http://localhost:3000";
+      let currentProtocolAndHostAndPort = prodWebsiteProtocolAndHostAndPort;
+      let pathForThisNextRequest = "/web/bootstrap";
+
+      // let fullRequestURL = prodWebsiteProtocolAndHostAndPort + pathForThisNextRequest;
+      // let fullRequestURL = currentProtocolAndHostAndPort + pathForThisNextRequest;
+      let fullRequestURL = `${currentProtocolAndHostAndPort}${pathForThisNextRequest}`;
+
+      let proto = "http";
+      let host = "localhost";
+      let optional_port = ":3000";
+      let path = "/login";
+      let url = `${proto}://${host}${optional_port}${path}`;
+```

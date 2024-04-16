@@ -9,6 +9,8 @@
           @for (pet of currentUser?.pets; track pet) {
             <li>
               {{pet.name}}
+              <button (click)="pleaseRemoveThisPetFromCurrentUser(pet)">Destroy this pet</button>
+
               <ul>
                 @for (prescription of pet.prescriptions; track prescription) {
                   <li>

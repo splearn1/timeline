@@ -57,6 +57,14 @@ export class TimelineComponent implements OnInit {
     });
   }
 
+  pleaseRemoveThisPetFromCurrentUser(pet: Pet) {
+    this.petService.deletePet(pet.id!).subscribe((res) => {
+      console.log(res);
+      // getBootstrapData
+    });
+    // this.petService.deletePet(id)
+  }
+
   // addTimeline() {
   //   if (!this.newTimelineBody.trim()){
   //     // referene timeline model for what I want to display

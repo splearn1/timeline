@@ -4,21 +4,28 @@
   <div class="card-container" d-flex>
     <div class="card-title">
       <div class="card-body">
-        <span>Welcome {{currentUser?.username}} : "{{message}}"</span>
+        <span>Welcome {{currentUser?.first_name}}</span>
+        <ul>
+          @for (pet of currentUser?.pets; track pet) {
+            <li>
+              {{pet.name}}
+              <ul>
+                @for (prescription of pet.prescriptions; track prescription) {
+                  <li>
+                    <p>Remember to give {{pet.name}} {{prescription.med.dosage}} of {{prescription.med.name}} {{prescription.frequency}}.</p>
+                  </li>
+                }
+              </ul>
+            </li>
+          }
+        </ul>
         <table>
           <thead>
-            <tr>
-              <!-- <th>Pet Name</th>
-              <th>Medication</th>
-              <th>Dosage</th>
-              <th>Frequency</th> -->
-              <!-- <button (click)="addPet()">Add</button> -->
-            </tr>
           </thead>
           <tbody>
             <div>
               <span>
-                <tr>Pet Name</tr>
+                <tr>Pet Name: </tr>
                 <button>add</button>
                 <button>edit</button>
                 <button>delete</button>

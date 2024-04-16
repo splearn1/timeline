@@ -5,6 +5,8 @@ import { Timeline } from '../models/timeline';
 import { TimelineService } from '../services/timeline.service';
 import { User } from '../models/users';
 import { UserService } from '../services/user.service';
+import { Pet } from '../models/pets';
+import { PetService } from '../services/pet.service';
 
 @Component({
   selector: 'app-timeline',
@@ -19,24 +21,40 @@ export class TimelineComponent implements OnInit {
   users: User[] = [];
   currentUser: User | null = null;
 
-  constructor(private timelineService: TimelineService, private userService:UserService) { }
+  constructor(private timelineService: TimelineService, private userService:UserService, private petService: PetService) { }
 
   ngOnInit(): void {
     this.userService.currentUserBehaviorSubject.subscribe((user) => {
       this.currentUser = user;
 
-      if (user) {
-        this.currentUser?.pets
-      }
+
     });
 
-      // this.timelineService.getTimelines().subscribe({
-      //   next: (users) => {
-      //     this.users = users;
-      //     console.log(this.users)
-      //   },
-      //   error: err => console.log(err)
-      // })
+  }
+
+  addANewPetToTheCurrentUserPlease(){
+    const newlyCreatedPet:Pet = {id:undefined, name:"Bruno", species:"dog", prescriptions:[]}
+    console.log("this is good");
+    this.petService.addPet(newlyCreatedPet).subscribe((res) => {
+      console.log(res);
+      this.userService.getBootstrapData().subscribe((res) => {})
+    })
+  }
+
+  pretendToBeBob() {
+    this.currentUser = {
+      id: 1,
+      first_name: "Bob",
+      last_name: "Bob",
+      email: "<EMAIL>",
+      username: "bob",
+      pets: []
+    };
+  }
+  reloadBootstrapData() {
+    this.userService.getBootstrapData().subscribe(data => {
+      console.log('reloaded');
+    });
   }
 
   // addTimeline() {

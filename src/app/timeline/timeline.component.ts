@@ -18,13 +18,16 @@ export class TimelineComponent implements OnInit {
   newTimelineBody: string = '';
   users: User[] = [];
   currentUser: User | null = null;
+  message: string = "what's happening";
 
   constructor(private timelineService: TimelineService, private userService:UserService) { }
 
   ngOnInit(): void {
     this.userService.currentUserBehaviorSubject.subscribe((user) => {
       this.currentUser = user;
+      this.message = `hello ${user?.first_name}`;
     });
+    // this.message = 'oh hi';
 
       this.timelineService.getTimelines().subscribe({
         next: (users) => {

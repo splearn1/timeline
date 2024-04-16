@@ -30,10 +30,10 @@ export class UserService {
   // getUserById(id:number) {
   //   return this.http.get<User>(`http://localhost:3000/users/${id}`);
   // }
-  updateUser(user:User) {
-    return this.http.put(`http://localhost:3000/users/${user.id}`, user);
-  }
-  deleteUser(id:number) {
-    return this.http.delete(`http://localhost:3000/users/${id}`);
-  }
+  // updateUser(user:User) {
+  //   return this.http.put(`http://localhost:3000/users/${user.id}`, user);
+  // }
+  // deleteUser(id:number) {
+  //   return this.http.delete(`http://localhost:3000/users/${id}`);
+  // }
 }

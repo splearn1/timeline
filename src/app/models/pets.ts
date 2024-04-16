@@ -1,7 +1,7 @@
 import { Prescription } from "./prescriptions";
 
 export class Pet {
-  id: number;
+  id?: number;
   name: string;
   species: string;
   prescriptions: Prescription[];

@@ -24,6 +24,11 @@ export class UserService {
       );
     }
 
+    signUp(user:any) {
+      // return this.http.post<{ token: string }>('http://localhost:3000/signup', user);
+      // return this.http.post(`${environment.apiUrl}/users`, data)
+      return this.http.post('http://localhost:3000/users', user);
+    }
   // createUser(user:User) {
   //   return this.http.post('http://localhost:3000/users', user);
   // }

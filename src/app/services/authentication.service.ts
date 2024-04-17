@@ -27,11 +27,7 @@ export class AuthenticationService {
     ))
   }
 
-  signUp(user:any) {
-    // return this.http.post<{ token: string }>('http://localhost:3000/signup', user);
-    // return this.http.post(`${environment.apiUrl}/users`, data)
-    return this.http.post('http://localhost:3000/users', user);
-  }
+
 
   private setToken(token: string) {
     localStorage.setItem('token', token);

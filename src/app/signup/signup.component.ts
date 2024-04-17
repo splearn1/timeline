@@ -3,6 +3,7 @@ import {  FormControl, ReactiveFormsModule, FormGroup, Validators, ValidatorFn, 
 import { CommonModule } from '@angular/common';
 import { AuthenticationService } from '../services/authentication.service';
 import { Router } from '@angular/router';
+import { UserService } from '../services/user.service';
 
 export const passwordsMatchValidator: ValidatorFn = (control: AbstractControl): {[key: string]: any} | null => {
   const password = control.get('password')?.value;
@@ -20,7 +21,7 @@ export const passwordsMatchValidator: ValidatorFn = (control: AbstractControl): 
 
 export class SignupComponent {
 
-  constructor(private authService: AuthenticationService, private router:Router, private fb: FormBuilder) { }
+  constructor(private authService: AuthenticationService, private router:Router, private fb: FormBuilder, private userService:UserService) { }
 
   signUpForm = this.fb.group({
     first_name:new FormControl('', [Validators.required]),
@@ -35,7 +36,7 @@ export class SignupComponent {
     console.log('form submitted');
     const formValue = this.signUpForm.value;
     console.log(formValue);
-    this.authService.signUp(formValue).subscribe({
+    this.userService.signUp(formValue).subscribe({
       next: (res:any) => {
         this.router.navigate(['/login']);
       },

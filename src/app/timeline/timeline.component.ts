@@ -37,7 +37,7 @@ export class TimelineComponent implements OnInit {
     console.log("this is good");
     this.petService.addPet(newlyCreatedPet).subscribe((res) => {
       console.log(res);
-      this.userService.getBootstrapData().subscribe((res) => {})
+      this.userService.refreshUserData().subscribe((res) => {})
     })
   }
 
@@ -52,7 +52,7 @@ export class TimelineComponent implements OnInit {
     };
   }
   reloadBootstrapData() {
-    this.userService.getBootstrapData().subscribe(data => {
+    this.userService.refreshUserData().subscribe(data => {
       console.log('reloaded');
     });
   }
@@ -60,10 +60,10 @@ export class TimelineComponent implements OnInit {
   pleaseRemoveThisPetFromCurrentUser(pet: Pet) {
     this.petService.deletePet(pet.id!).subscribe((res) => {
       console.log(res);
-      // getBootstrapData
+      //adding automatic refresh
+      this.userService.refreshUserData().subscribe((res) => {});
     });
-    // this.petService.deletePet(id)
   }
 
-  
+
 }

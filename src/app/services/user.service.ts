@@ -16,7 +16,7 @@ export class UserService {
       this.currentUserBehaviorSubject.next(user);
     }
 
-    getBootstrapData(){
+    refreshUserData(){
       return this.http.get(`${environment.apiUrl}/web/user_data`).pipe(
         tap((res:any) => {
           this.setCurrentUser(res.current_user);

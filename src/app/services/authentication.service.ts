@@ -22,7 +22,7 @@ export class AuthenticationService {
       console.log(res);
       console.log(res.token);
       this.setToken(res.token)
-      return this.userService.getBootstrapData()
+      return this.userService.refreshUserData()
     }
     ))
   }

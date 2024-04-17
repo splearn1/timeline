@@ -10,7 +10,7 @@ import { of } from 'rxjs';
 
 export function initializeUserData(userService: UserService, authService: AuthenticationService){
   if(authService.isLoggedIn()){
-    return () => userService.getBootstrapData().subscribe();
+    return () => userService.refreshUserData().subscribe();
   }else{
     return () => of(null);
   }

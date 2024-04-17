@@ -31,6 +31,12 @@ export class UserService {
       return this.http.post(`${environment.apiUrl}/users`, user);
     }
 
+    changeFirstName(id:number,newFirstName:string){
+      console.log(newFirstName);
+      return this.http.patch(`${environment.apiUrl}users/${id}`,{first_name:newFirstName})
+
+    }
+
   // updateUser(user:User) {
   //   return this.http.put(`http://localhost:3000/users/${user.id}`, user);
   // }

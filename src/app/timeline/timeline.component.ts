@@ -15,16 +15,23 @@ import { PetService } from '../services/pet.service';
 })
 export class TimelineComponent implements OnInit {
   currentUser: User | null = null;
+  userFirstName: string ='';
 
   constructor(private userService:UserService, private petService: PetService) { }
 
   ngOnInit(): void {
     this.userService.currentUserBehaviorSubject.subscribe((user) => {
       this.currentUser = user;
-
+      this.userFirstName = this.currentUser?.first_name || '';
 
     });
 
+  }
+
+  updateCurrentUserFirstName(){
+    this.userService.changeFirstName(this.currentUser!.id,this.userFirstName).subscribe((res) => {
+      this.userService.refreshUserData().subscribe();
+    })
   }
 
   addANewPetToTheCurrentUserPlease(){

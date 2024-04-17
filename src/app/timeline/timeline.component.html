@@ -3,7 +3,8 @@
   <div class="card-container" d-flex>
     <div class="card-title">
       <div class="card-body">
-        <span>Welcome {{currentUser?.first_name}}</span>
+        <span>Welcome <input type="text" [(ngModel)]="userFirstName">
+        <button (click)="updateCurrentUserFirstName()">Update</button></span>
         <ul>
           @for (pet of currentUser?.pets; track pet) {
             <li>

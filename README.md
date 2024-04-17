@@ -33,7 +33,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
       let prodWebsiteProtocolAndHostAndPort = "https://my.production.website:12345";
       let devWebsiteProtocolAndHostAndPort = "http://localhost:3000";
       let currentProtocolAndHostAndPort = prodWebsiteProtocolAndHostAndPort;
-      let pathForThisNextRequest = "/web/bootstrap";
+      let pathForThisNextRequest = "/web/user_data";
 
       // let fullRequestURL = prodWebsiteProtocolAndHostAndPort + pathForThisNextRequest;
       // let fullRequestURL = currentProtocolAndHostAndPort + pathForThisNextRequest;

@@ -17,7 +17,7 @@ export class UserService {
     }
 
     getBootstrapData(){
-      return this.http.get(`${environment.apiUrl}/web/bootstrap`).pipe(
+      return this.http.get(`${environment.apiUrl}/web/user_data`).pipe(
         tap((res:any) => {
           this.setCurrentUser(res.current_user);
         })

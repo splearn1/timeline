@@ -24,17 +24,13 @@ export class UserService {
       );
     }
 
+    // This method creates a new user.
     signUp(user:any) {
       // return this.http.post<{ token: string }>('http://localhost:3000/signup', user);
       // return this.http.post(`${environment.apiUrl}/users`, data)
       return this.http.post('http://localhost:3000/users', user);
     }
-  // createUser(user:User) {
-  //   return this.http.post('http://localhost:3000/users', user);
-  // }
-  // getUserById(id:number) {
-  //   return this.http.get<User>(`http://localhost:3000/users/${id}`);
-  // }
+
   // updateUser(user:User) {
   //   return this.http.put(`http://localhost:3000/users/${user.id}`, user);
   // }

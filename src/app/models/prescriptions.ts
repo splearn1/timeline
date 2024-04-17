@@ -17,4 +17,3 @@ export class Prescription {
   }
 
 }
-// Do i need to import User for this and meds and pets or username ??????

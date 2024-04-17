@@ -13,28 +13,9 @@ export class TimelineService {
 
   constructor(private user:UserService,private http:HttpClient) {}
 
-  // getTimelines(): Observable<Timeline[]> {
-  //   return this.http.get<Timeline[]>(this.url);
-  // // }
+// I NEED TO DELETE THIS UNNECESSARY SERVICE!!!!!
   getTimelines(): Observable<User[]> {
     return this.http.get<User[]>(this.url);
   }
 
-  // getTimelines(currentUser: User)
-
-  // getTimelineById(id: number): Observable<Timeline> {
-  //   return this.http.get<Timeline>(`${this.url}/${id}`);
-  // }
-
-  // createTimeline(timeline: Timeline): Observable<Timeline> {
-  //   return this.http.post<Timeline>(this.url, timeline);
-  // }
-
-  // updateTimeline(timeline: Timeline): Observable<Timeline> {
-  //   return this.http.put<Timeline>(`${this.url}/${timeline}`, timeline);
-  // }
-
-  // deleteTimeline(id: number): Observable<Timeline> {
-  //   return this.http.delete<Timeline>(`${this.url}/${id}`);
-  // }
 }

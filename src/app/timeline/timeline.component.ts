@@ -65,35 +65,5 @@ export class TimelineComponent implements OnInit {
     // this.petService.deletePet(id)
   }
 
-  // addTimeline() {
-  //   if (!this.newTimelineBody.trim()){
-  //     // referene timeline model for what I want to display
-  //   return;
-  //   }
-
-
-  //   const timeline = {
-  //     body: this.newTimelineBody,
-  //     is_completed: false
-  //   };
-
-  //   this.timelineService.createTimeline(timeline).subscribe(newtimeline => {
-  //   this.timelines.push(newtimeline);
-  //   this.newTimelineBody = '';
-  //   });
-  // }
-
-  // updateTimeline(timeline: Timeline) {
-  //   this.timelineService.updateTimeline(timeline).subscribe(updatedtimeline => {
-  //     const index = this.timelines.findIndex(t => t.id === updatedtimeline.id);
-  //     this.timelines[index] = updatedtimeline;
-  //   });
-  // }
-
-  // deleteTimeline(id: number) {
-  //   this.timelineService.deleteTimeline(id).subscribe({
-  //     next: () => this.timelines = this.timelines.filter(timeline => timeline.id !==id),
-  //     error: (err) => console.error(err)
-  //   });
-  // }
+  
 }

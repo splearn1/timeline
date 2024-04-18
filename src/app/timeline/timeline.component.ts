@@ -45,14 +45,7 @@ export class TimelineComponent implements OnInit {
 
   pretendToBeBob() {
     this.userFirstName = 'Bob';
-    // this.currentUser = {
-    //   id: 1,
-    //   first_name: "Bob",
-    //   last_name: "Bob",
-    //   email: "<EMAIL>",
-    //   username: "bob",
-    //   pets: []
-    // };
+
   }
   reloadBootstrapData() {
     this.userService.refreshUserData().subscribe(data => {
